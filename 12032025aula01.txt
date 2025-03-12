@@ -6,3 +6,4 @@ Estruturas de dados lineares: listas, filas e pilhas;
 Dicionário e Mapas;
 Algoritmos de busca e ordenação.
  
+ testando
