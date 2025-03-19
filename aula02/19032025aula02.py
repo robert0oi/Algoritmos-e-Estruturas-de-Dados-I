@@ -1,4 +1,4 @@
 # métodos
 # instâncias
 
-# Testando commit sem key
+# testando commit com a key, agora verificada.
