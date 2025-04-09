@@ -5,8 +5,9 @@ from TelaVeiculo import TelaVeiculo
 
 class TelaCarro(TelaVeiculo):
 
-    def __init__(self, titulo = "Tela de Carro"):
+    def __init__(self, titulo = "Tela de Carro", categorias = []):
         super().__init__(titulo)
+        self.listaCategorias = categorias
     
     def definirLayout(self):
         super().definirLayout()
@@ -15,6 +16,16 @@ class TelaCarro(TelaVeiculo):
         self.layout.addWidget(self.lblPortas)
         self.layout.addWidget(self.txtPortas)
     
+        self.lblCategoria = QLabel("Categoria: ")
+        self.layout.addWidget(self.lblCategoria)
+
+        self.cmbCategoria = QComboBox(self)
+        self.cmbCategoria.addItem("Selecione...", None)
+        for cat in self.listaCategorias:
+            self.cmbCategoria.addItem(cat.nome , cat)
+            self.layout.addWidget = self.cmbCategoria
+
+
     def salvar(self):
         modelo = self.txtModelo.text()
         if modelo != "":
