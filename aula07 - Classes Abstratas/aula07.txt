@@ -1,0 +1,6 @@
+Diferença entre classe concreta e abstrata.
+
+A concreta te permite criar instâncias, já a abstrata não.
+A classe abstrata cria um modelo[...]
+
+Método da classe abstrata precisa ser implementado na classe concreta.
