@@ -1,6 +1,64 @@
-Diferença entre classe concreta e abstrata.
+=============================================
+|  DIFERENÇA ENTRE CLASSE ABSTRATA E CONCRETA  |
+=============================================
 
-A concreta te permite criar instâncias, já a abstrata não.
-A classe abstrata cria um modelo[...]
+1. CLASSE CONCRETA
+   - Pode ser instanciada (criar objetos diretamente).
+   - Todos os métodos estão implementados.
+   - Exemplo:
+     class Animal:
+         def comer(self):
+             print("Comendo...")
 
-Método da classe abstrata precisa ser implementado na classe concreta.
+     # Uso:
+     gato = Animal()
+     gato.comer()  # Saída: "Comendo..."
+
+
+2. CLASSE ABSTRATA
+   - NÃO pode ser instanciada (apenas herdada).
+   - Pode conter métodos abstratos (sem implementação).
+   - Obriga classes filhas a implementarem métodos abstratos.
+   - Exemplo:
+     from abc import ABC, abstractmethod
+
+     class Veiculo(ABC):
+         @abstractmethod
+         def ligar(self):
+             pass
+
+     class Carro(Veiculo):
+         def ligar(self):  # Implementação obrigatória
+             print("Ligando motor...")
+
+     # Uso:
+     fusca = Carro()
+     fusca.ligar()  # Saída: "Ligando motor..."
+
+
+3. COMPARAÇÃO RÁPIDA
+   +---------------------+---------------------+
+   |    Classe Concreta  |    Classe Abstrata  |
+   +---------------------+---------------------+
+   | ✅ Pode instanciar  | ❌ Não instancia    |
+   | ❌ Sem métodos      | ✅ Pode ter métodos |
+   |    abstratos        |    abstratos        |
+   +---------------------+---------------------+
+
+
+4. POR QUE USAR CLASSES ABSTRATAS?
+   - Garantir que classes filhas implementem métodos essenciais.
+   - Criar contratos para estruturas de código.
+   - Exemplo na sua atividade:
+     - Produto (abstrata) → obriga Desktop/Notebook a implementar cadastrar().
+
+
+5. EXEMPLO PRÁTICO (SUA ATIVIDADE)
+   - Produto (abstrata):
+     @abstractmethod
+     def cadastrar(self):  # Deve ser implementado
+         pass
+
+   - Notebook (concreta):
+     def cadastrar(self):  # Implementação real
+         print("Notebook cadastrado!")
