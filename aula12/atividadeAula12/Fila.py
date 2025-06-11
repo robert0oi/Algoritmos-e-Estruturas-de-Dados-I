@@ -4,33 +4,32 @@ class Fila:
     def __init__(self):
         self.inicio = None
         self.fim = None
-    
-    def add(self, valor):
-        nodo = Carro(valor)
+
+    def add(self, carro):
         if self.inicio is None:
-            self.inicio = nodo
+            self.inicio = carro
         else:
-            self.fim.prox = nodo
-        self.fim = nodo
+            self.fim.prox = carro
+        self.fim = carro
         self.imprimir()
-    
+
     def imprimir(self):
-        print(("-" * 15) + " Fila - FIFO " + ("-" * 15))
+        print(("-" * 16) + " Lavagem de Carros " + ("-" * 15))
         if self.inicio is None:
-            print("A Fila está vazia!")
+            print("A fila está vazia!")
         else:
             aux = self.inicio
-            txt = ""
-            while aux: #ou aux is not None
-                txt += aux.dado + " - "
+            while aux:
+                print(aux)
                 aux = aux.prox
-            print(txt)
 
     def remover(self):
-        if self.inicio is not None: # Verifica se a lista não está vazia
-            elemento = self.inicio
-            self.inicio = self.inicio.prox ##atencao
-            if self.inicio == None:
-                self.fim = None            
-            print(carro.modelo, " Removido.")
+        if self.inicio is not None:
+            removido = self.inicio
+            self.inicio = self.inicio.prox
+            if self.inicio is None:
+                self.fim = None
+            print(f"Carro Lavado: {removido}")
+        else:
+            print("A fila está vazia!")
         self.imprimir()
